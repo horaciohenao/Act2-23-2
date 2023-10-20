@@ -36,7 +36,7 @@ class A_02_bogosort {
         
     }
 
-    // funcion para aplicar un bubblesort
+    // funcion para aplicar un bogosort
     public static void bogoSort ( int[] values ) {
 
         // crea un random
@@ -91,7 +91,7 @@ class A_02_bogosort {
         System.out.print("= Array original =\n[ ");
         printArr(arrInt);
 
-        // aplica el bubblesort
+        // aplica el bogosort
         System.out.print("= Ordenando Array =\n");
         bogoSort(arrInt);
 

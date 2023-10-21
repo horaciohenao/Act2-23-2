@@ -50,16 +50,12 @@ class A_02_bogosort {
 
             int random = ranIntIns.nextInt(values.length);
 
-                // si el valor en random es mayor al de index los intercambia
-                if ( values[random] > values[index] ) {
+                // intercambia valores aleatorios
+                int temp = values[random];
 
-                    int temp = values[random];
+                values[random] = values[index];
 
-                    values[random] = values[index];
-
-                    values[index] = temp;
-                    
-                }
+                values[index] = temp;
 
             System.out.print("[ ");
 

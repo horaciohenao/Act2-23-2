@@ -25,7 +25,7 @@ class A_01_bubblesort {
             // recorre el arrya menos el ultimo elemento
             for ( int index2 = 0; index2 < values.length - 1; index2++ ) {
 
-                // si el valor en index2 es mator al de index2 + 1 los intercambia
+                // si el valor en index2 es mayor al de index2 + 1 los intercambia
                 if ( values[index2] > values[index2+1] ) {
 
                     int temp = values[index2];

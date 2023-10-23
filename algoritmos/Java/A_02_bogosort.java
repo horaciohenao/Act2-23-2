@@ -52,12 +52,21 @@ class A_02_bogosort {
 
             int random = ranIntIns.nextInt(values.length);
 
-                // intercambia valores aleatorios
-                int temp = values[random];
+            // intercambia valores aleatorios
+            int temp = values[random];
 
-                values[random] = values[index];
+            values[random] = values[index];
 
-                values[index] = temp;
+            values[index] = temp;
+
+            random = ranIntIns.nextInt(values.length);
+
+            // intercambia valores aleatorios
+            temp = values[random];
+
+            values[random] = values[index];
+
+            values[index] = temp;
 
             // imprime el estado actual del array luego de modificarlo
             printArr(values);
@@ -74,7 +83,7 @@ class A_02_bogosort {
         Random ranInt = new Random();
 
         // crea un array int de 5 espacios 
-        int[] arrInt = new int[3];
+        int[] arrInt = new int[5];
 
         // asgina valores aleatorios 
         for ( int i = 0; i < arrInt.length; i++ ) {

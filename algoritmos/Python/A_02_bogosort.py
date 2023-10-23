@@ -44,6 +44,11 @@ def bogoSort ( values ):
 
             # intercambia valores aleatorios
             values[i], values[temp] = values[temp], values[i]
+
+            temp = random.randint(0, lenVar-1)
+
+            # intercambia valores aleatorios
+            values[temp], values[temp] = values[temp], values[temp]
             
             isSortVar = isSort(values)
 

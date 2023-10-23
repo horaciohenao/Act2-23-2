@@ -1,42 +1,71 @@
 import random
 
+# Crea un funcion para imprimir una lista
+def printList(values):
+
+    print("[ ", end = "")
+
+    # recorre la lista
+    for x in values:
+
+        print(x, end = " ")
+
+    print("]")
+
 #  funcion para aplicar un insertionSort
 def insertionSort ( values ):
 
     lenVar = len(values)
 
-    # recorre el array 
-    for i in range(lenVar):
+    # recorre la lista desde 1 asumiendo que el primer elemento ya esta ordenado
+    for i in range(1, lenVar):
 
-        # recorre el arrya menos el ultimo elemento
-        for j in range(lenVar-1):
+        # si el valor en i es menor al valor anterior en i
+        if values[i] < values[i-1]:
 
-            # si el valor en index2 es mayor al de index2 + 1 los intercambia
-            if values[j] > values[j+1]:
+            # usa i como pivote
+            piv = values[i]
 
-                values[j], values[j+1] = values[j+1], values[j]
+            # crea una variable temporal para i
+            temp = i
 
-            # imprime el estado actual del array en esa interacion
-            print(values)
+            # desplaza los valores a la izquierda mientras que no sean 
+            # temp 0 para eviar un outOfBounds
+            # values[temp - 1] > piv para que no reemplace un valor menor al pivote actual
+            while temp > 0 and values[temp-1] > piv:
 
-# crea un array int de 10 espacios
-arrInt = [0] * 10
+                # toma el valor anterior y lo reemplaza con el actual
+                values[temp] = values[temp - 1]
+
+                temp-=1
+
+            # reemplaza la ubicacion actual de temp con el pivote
+            # "lo inserta"
+            values[temp] = piv
+
+        printList(values) 
+
+
+# crea una lista int de 10 espacios
+listInt = [0] * 10
 
 # asgina valores aleatorios 
 index = 0
 
 for x in range(10):
 
-    arrInt[index] = random.randint(1, 9)
+    listInt[index] = random.randint(1, 9)
 
     index += 1
 
-# imprime el array original
-print("= Array original =\n" + str(arrInt))
+# imprime la lista original
+print("= Lista original =")
+printList(listInt)
 
 # aplica el insertionSort
-print("\n= Ordenando Array =")
-insertionSort(arrInt)
+print("= Ordenando Lista =")
+insertionSort(listInt)
 
-# imprime el array ordenado
-print("\n= Array ordenado =\n" + str(arrInt))
+# imprime la lista ordenada
+print("= Lista ordenada =")
+printList(listInt)

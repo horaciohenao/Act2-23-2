@@ -1,18 +1,31 @@
 import random
 
+# Crea un funcion para imprimir una lista
+def printList(values):
+
+    print("[ ", end = "")
+
+    # recorre la lista
+    for x in values:
+
+        print(x, end = " ")
+
+    print("]")
+
+# funcion "esta ordenado?"
 def isSort ( values ):
 
     lenVar = len(values)
 
-    # recorre el array 
+    # recorre la lista desde 1 asumiendo que el primer elemento ya esta ordenado
     for i in range(1, lenVar):
 
-        # si el valor en i es menor al valor anterior entonces no esta ordenado
+        # si el valor en i es menor al valor anterior entonces no esta ordenada
         if values[i] < values[i-1]:
 
             return False
         
-        # si al recorrer el array no se cumple el if está ordenado
+    # si al recorrer la lista no se cumple el if está ordenada
     return True
 
 #  funcion para aplicar un bogoSort
@@ -24,7 +37,7 @@ def bogoSort ( values ):
 
     while isSortVar == False:
 
-        # recorre el array 
+        # recorre la lista
         for i in range(lenVar-1):
 
             temp = random.randint(0, lenVar-1)
@@ -34,27 +47,29 @@ def bogoSort ( values ):
             
             isSortVar = isSort(values)
 
-            # imprime el estado actual del array en esa interacion
-            print(values)
+            # imprime el estado actual de la lista en esa interacion
+            printList(values)
 
-# crea un array int de 10 espacios
-arrInt = [0] * 5
+# crea una lista int de 10 espacios
+listInt = [0] * 5
 
 # asgina valores aleatorios 
 index = 0
 
 for x in range(5):
 
-    arrInt[index] = random.randint(1, 9)
+    listInt[index] = random.randint(1, 9)
 
     index += 1
 
-# imprime el array original
-print("= Array original =\n" + str(arrInt))
+# imprime la lista original
+print("= Lista original =")
+printList(listInt)
 
-# aplica el bogoSort
-print("\n= Ordenando Array =")
-bogoSort(arrInt)
+# aplica el bogosort
+print("= Ordenando Lista =")
+bogoSort(listInt)
 
-# imprime el array ordenado
-print("\n= Array ordenado =\n" + str(arrInt))
+# imprime la lista ordenada
+print("= Lista ordenada =")
+printList(listInt)

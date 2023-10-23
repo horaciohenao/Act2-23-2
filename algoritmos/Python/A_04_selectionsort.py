@@ -12,23 +12,31 @@ def printList(values):
 
     print("]")
 
-# funcion para aplicar un bubblesort
-def bubbleSort(values):
-    
+# funcion para aplicar un selectionsort
+def selectionSort(values):
+
     lenVar = len(values)
 
     # recorre la lista 
     for i in range(lenVar):
 
-        # recorre la lista menos el ultimo elemento
-        for j in range(lenVar - 1):
+        # toma index como pivote
+        minI = i
 
-            # si el valor en j es mayor al de j + 1 los intercambia
-            if values[j] > values[j + 1]:
-                values[j], values[j + 1] = values[j + 1], values[j]
+        # recorre el array para buscar un nuevo valor más bajo desde del ultimo más bajo, i
+        for j in range(i, lenVar):
 
-            # imprime el estado actual de la lista en esa interacion
-            printList(values)
+            # si valor actual en j es menor a minI actual y actualiza minI
+            if values[j] < values[minI]:
+
+                minI = j
+
+        # los intercambia
+        values[minI], values[i] = values[i], values[minI]
+
+        # imprime el estado actual del array luego de modificarlo
+        printList(values)
+
 
 # crea un lista int de 10 espacios
 listInt = [0] * 10
@@ -43,9 +51,9 @@ for x in range(10):
 print("= Lista original =")
 printList(listInt)
 
-# aplica el bubblesort
+# aplica el selectionsort
 print("= Ordenando Lista =")
-bubbleSort(listInt)
+selectionSort(listInt)
 
 # imprime la lista ordenada
 print("= Lista ordenada =")

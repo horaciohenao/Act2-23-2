@@ -4,6 +4,8 @@ public class A_05_shellsort {
 
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {
+            
+        System.out.print("[ ");
 
         // Recorre el array
         for ( int i = 0; i < values.length; i++ ) {
@@ -19,16 +21,19 @@ public class A_05_shellsort {
     // funcion para aplicar un shellSort
     public static void shellSort ( int[] values ) {
 
-        // un bucle for que recorre el array pero mientras que gap sea mayor que 0 y en cada intreacion su tamaño se reduce a la mitad
         
         for ( int pass = 0; pass != 3; pass++ ) {
         
+            // un bucle for que recorre el array pero mientras que gap sea mayor que 0 y en cada intreacion su tamaño se reduce a la mitad
             for ( int gap = values.length / 2; gap > 0; gap /= 2 ) {
     
+                // recorre el array hasta la longitud - el gap actual para evitar un outOfBounds
                 for ( int i = 0; i < values.length - gap; i++ ) {
                         
+                    // si i actual es mayor a gap, osea no hay posibilidad de outOfBounds
                     if ( i > gap ) {
     
+                        // si el valor en i-gap es mayor que i los intercambia
                         if ( values[i-gap] > values[i] ) {
         
                             int temp2 = values[i];
@@ -41,6 +46,7 @@ public class A_05_shellsort {
                         
                     }
                     
+                    // si el valor en i es mayor que i + gap los intercambia
                     if ( values[i] > values[i+gap] ) {
     
                         int temp = values[i];
@@ -50,8 +56,6 @@ public class A_05_shellsort {
                         values[i+gap] = temp;
                         
                     }
-            
-                    System.out.print("[ ");
             
                     // imprime el estado actual del array luego de modificarlo
                     printArr(values);
@@ -81,15 +85,15 @@ public class A_05_shellsort {
         }
 
         // imprime el array original
-        System.out.print("= Array original =\n[ ");
+        System.out.println("= Array original =");
         printArr(arrInt);
 
         // aplica el shellSort
-        System.out.print("= Ordenando Array =\n");
+        System.out.println("= Ordenando Array =");
         shellSort(arrInt);
 
         // imprime el array ordenado
-        System.out.print("= Array ordenado =\n[ ");
+        System.out.println("= Array ordenado =");
         printArr(arrInt);
         
     }

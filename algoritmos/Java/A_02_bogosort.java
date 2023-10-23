@@ -5,6 +5,8 @@ class A_02_bogosort {
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {
 
+        System.out.print("[ ");
+
         // Recorre el array
         for ( int i = 0; i < values.length; i++ ) {
 
@@ -57,8 +59,6 @@ class A_02_bogosort {
 
                 values[index] = temp;
 
-            System.out.print("[ ");
-
             // imprime el estado actual del array luego de modificarlo
             printArr(values);
 
@@ -84,15 +84,15 @@ class A_02_bogosort {
         }
 
         // imprime el array original
-        System.out.print("= Array original =\n[ ");
+        System.out.println("= Array original =");
         printArr(arrInt);
 
         // aplica el bogosort
-        System.out.print("= Ordenando Array =\n");
+        System.out.println("= Ordenando Array =");
         bogoSort(arrInt);
 
         // imprime el array ordenado
-        System.out.print("= Array ordenado =\n[ ");
+        System.out.println("= Array ordenado =");
         printArr(arrInt);
         
     }

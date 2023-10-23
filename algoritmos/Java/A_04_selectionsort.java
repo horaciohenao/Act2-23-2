@@ -4,6 +4,8 @@ public class A_04_selectionsort {
 
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {
+    
+        System.out.print("[ ");
 
         // Recorre el array
         for ( int i = 0; i < values.length; i++ ) {
@@ -25,7 +27,7 @@ public class A_04_selectionsort {
             // toma index como pivote
             int minI = i; 
     
-            // recorre el array para buscar un nuevo valor más bajo
+            // recorre el array para buscar un nuevo valor más bajo desde del ultimo más bajo, i
             for ( int j = i; j < values.length; j++ ) {
     
                 // si valor actual en j es menor a minI actual y actualiza minI
@@ -43,8 +45,6 @@ public class A_04_selectionsort {
             values[minI] = values[i];
     
             values[i] = temp;
-    
-            System.out.print("[ ");
     
             // imprime el estado actual del array luego de modificarlo
             printArr(values);
@@ -69,15 +69,15 @@ public class A_04_selectionsort {
         }
 
         // imprime el array original
-        System.out.print("= Array original =\n[ ");
+        System.out.println("= Array original =");
         printArr(arrInt);
 
         // aplica el selectionSort
-        System.out.print("= Ordenando Array =\n");
+        System.out.println("= Ordenando Array ");
         selectionSort(arrInt);
 
         // imprime el array ordenado
-        System.out.print("= Array ordenado =\n[ ");
+        System.out.println("= Array ordenado =");
         printArr(arrInt);
         
     }

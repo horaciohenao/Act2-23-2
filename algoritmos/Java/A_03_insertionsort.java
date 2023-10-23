@@ -4,6 +4,8 @@ public class A_03_insertionsort {
 
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {
+        
+        System.out.print("[ ");
 
         // Recorre el array
         for ( int i = 0; i < values.length; i++ ) {
@@ -20,10 +22,10 @@ public class A_03_insertionsort {
     public static void insertionSort(int[] values) {
         
         // recorre el array asumiendo que el primer valor ya está ordenado
-        for (int i = 1; i < values.length; i++) {
+        for ( int i = 1; i < values.length; i++ ) {
             
             // si el valor en i es menor al valor anterior en i
-            if (values[i] < values[i - 1]) {
+            if ( values[i] < values[i - 1] ) {
                 
                 // usa i como pivote
                 int piv = values[i];
@@ -34,7 +36,7 @@ public class A_03_insertionsort {
                 // desplaza los valores a la izquierda mientras que no sean 
                 // temp 0 para eviar un outOfBounds
                 // values[temp - 1] > piv para que no reemplace un valor menor al pivote actual
-                while (temp > 0 && values[temp - 1] > piv) {
+                while ( temp > 0 && values[temp - 1] > piv ) {
                     
                     // toma el valor anterior y lo reemplaza con el actual
                     values[temp] = values[temp - 1]; 
@@ -49,7 +51,6 @@ public class A_03_insertionsort {
                 
             }
             
-            System.out.print("[ ");
             printArr(values);
         }
         
@@ -72,15 +73,15 @@ public class A_03_insertionsort {
         }
 
         // imprime el array original
-        System.out.print("= Array original =\n[ ");
+        System.out.println("= Array original =");
         printArr(arrInt);
 
         // aplica el insertionsort
-        System.out.print("= Ordenando Array =\n");
+        System.out.println("= Ordenando Array =");
         insertionSort(arrInt);
 
         // imprime el array ordenado
-        System.out.print("= Array ordenado =\n[ ");
+        System.out.println("= Array ordenado =");
         printArr(arrInt);
         
     }

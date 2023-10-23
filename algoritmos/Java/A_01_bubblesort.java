@@ -1,9 +1,11 @@
 import java.util.Random;
 
 class A_01_bubblesort {
-
+    
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {
+
+        System.out.print("[ ");
 
         // Recorre el array
         for ( int i = 0; i < values.length; i++ ) {
@@ -36,8 +38,6 @@ class A_01_bubblesort {
                     
                 }
 
-                System.out.print("[ ");
-
                 // imprime el estado actual del array en esa interacion
                 printArr(values);
                 
@@ -63,15 +63,15 @@ class A_01_bubblesort {
         }
 
         // imprime el array original
-        System.out.print("= Array original =\n[ ");
+        System.out.println("= Array original =");
         printArr(arrInt);
 
         // aplica el bubblesort
-        System.out.print("= Ordenando Array =\n");
+        System.out.println("= Ordenando Array =");
         bubbleSort(arrInt);
 
         // imprime el array ordenado
-        System.out.print("= Array ordenado =\n[ ");
+        System.out.println("= Array ordenado =");
         printArr(arrInt);
         
     }

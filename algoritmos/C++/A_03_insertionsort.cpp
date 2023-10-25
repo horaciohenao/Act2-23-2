@@ -29,7 +29,7 @@ int randomInt( int min, int max ) {
 }
 
 // funcion para aplicar un insertionsort
-void selectionSort( int values[], int size) {
+void insertionSort( int values[], int size) {
 
     // recorre el array asumiendo que el primer valor ya está ordenado
     for ( int i = 1; i < size; i++ ) {
@@ -90,7 +90,7 @@ int main() {
 
     // aplica el insertionsort
     printf("= Ordenando Array =\n");
-    selectionSort(arrInt, size);
+    insertionSort(arrInt, size);
 
     // imprime el array ordenado
     printf("= Array ordenado =\n");

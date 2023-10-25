@@ -29,7 +29,7 @@ int randomInt( int min, int max ) {
 }
 
 // funcion para aplicar un bubblesort
-void selectionSort( int values[], int size) {
+void bubbleSort( int values[], int size) {
 
     // recorre el array
     for ( int index = 0; index < size; index++ ) {
@@ -81,7 +81,7 @@ int main() {
 
     // aplica el bubblesort
     printf("= Ordenando Array =\n");
-    selectionSort(arrInt, size);
+    bubbleSort(arrInt, size);
 
     // imprime el array ordenado
     printf("= Array ordenado =\n");

@@ -23,11 +23,11 @@ def shellSort(values):
         gap = lenVar // 2
         while gap > 0:
 
-            # recorre el array hasta la longitud - el gap actual para evitar un outOfBounds
+            # recorre el array hasta la longitud - el gap actual para evitar un indexError
             index = 0
             while index < lenVar - gap:
 
-                # si i actual es mayor a gap, osea no hay posibilidad de outOfBounds
+                # si i actual es mayor a gap, osea no hay posibilidad de indexError
                 if index > gap:
 
                     # si el valor en i-gap es mayor que i los intercambia
@@ -48,7 +48,6 @@ def shellSort(values):
 
             # imprime el estado actual del array luego de modificarlo
             print(values)
-
 
 # crea un lista int de 10 espacios
 listInt = [0] * 10

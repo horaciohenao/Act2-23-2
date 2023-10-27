@@ -49,7 +49,7 @@ bool isSort ( int values[], int size ) {
 }
 
 // funcion para aplicar un bogosort
-void selectionSort ( int values[], int size) {
+void bogoSort ( int values[], int size) {
 
     // semilla de generacion de numeros
     srand(time(NULL));
@@ -111,7 +111,7 @@ int main() {
 
     // aplica el bogosort
     printf("= Ordenando Array =\n");
-    selectionSort(arrInt, size);
+    bogoSort(arrInt, size);
 
     // imprime el array ordenado
     printf("= Array ordenado =\n");

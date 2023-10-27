@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class A_01_bubblesort {
+public class A_01_bubblesort {
     
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {

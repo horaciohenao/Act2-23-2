@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class A_02_bogosort {
+public class A_02_bogosort {
 
     // Crea un funcion para imprimir un array int
     public static void printArr ( int[] values ) {

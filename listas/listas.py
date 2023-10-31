@@ -1,17 +1,5 @@
 import random
 
-# Crea un funcion para imprimir una lista
-def printList(values):
-
-    print("[ ", end = "")
-
-    # recorre la lista
-    for x in values:
-
-        print(x, end = " ")
-
-    print("]")
-
 # funcion para aplicar un bubblesort
 def bubbleSort(values):
     
